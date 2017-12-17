@@ -39,7 +39,7 @@ if (!($log)) {
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="active">
+                    <li >
                         <a href="<?php echo base_url('index.php/Admin/index') ?>">
                             <i class="material-icons">dashboard</i>
                             <p>Dashboard</p>
@@ -51,7 +51,7 @@ if (!($log)) {
                             <p>User Profile</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="<?php echo base_url('index.php/Admin/projects') ?>">
                             <i class="material-icons">group_work</i>
                             <p>Projects</p>
@@ -139,7 +139,64 @@ if (!($log)) {
             </nav>
             <div class="content">
                 <div class="container-fluid">
+
                     <div class="row">
+                      <div class="col-md-8">
+                         <div class="card">
+                             <div class="card-header" data-background-color="purple">
+                                 <h4 class="title">Add New Project </h4>
+                 <p class="category"></p>
+                             </div>
+                             <div class="card-content">
+                               <?php if ($this->session->flashdata('projup')) {
+                                 echo ($this->session->flashdata('projup'));
+
+                               }?>
+                               <?php if (isset($error)) {echo $error;}?>
+                               <?php echo form_open_multipart('Admin/do_upload_update/'.$projid.'/'.$image);?>
+
+                                     <div class="row">
+
+                                         <div class="col-md-12">
+                                         <div class="form-group label-floating">
+                                           <label class="control-label" >Project Title</label>
+                                           <input  type="text" name="title" class="form-control" value="<?php echo $projtitle; ?>" required	>
+                                         </div>
+
+                                        </div>
+                                    </div>
+
+                                       <div class="row">
+                                         <div class="col-md-12">
+                                             <div class="form-group">
+                                                   <label>Description</label>
+                                                   <div class="form-group label-floating">
+                                                       <label class="control-label"> Add text here.</label>
+                                                       <textarea class="form-control" name="description" rows="5" value="" ><?php echo $projdes; ?></textarea>
+                                                  </div>
+                                             </div>
+                                         </div>
+                                       </div>
+
+                                       <div class="row">
+                                         <div class="col-md-6">
+                                           <input type="file" name="userfile" size="20" value="pa"/>
+                                         </div>
+                                         <div class="col-md-6">
+                                           <img src="<?php echo base_url(); ?>uploads/<?php echo $image ?>" alt="" style="height:200px;">
+                                         </div>
+
+                                       </div>
+
+                                     <button type="submit" class="btn btn-primary pull-right">Update</button>
+                                     <div class="clearfix"></div>
+                                 </form>
+                             </div>
+                         </div>
+                     </div>
+
+
+
 
                     </div>
                 </div>

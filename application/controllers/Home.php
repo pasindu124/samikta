@@ -29,6 +29,9 @@ class Home extends CI_Controller
   public function register(){
     $this->load->view('register');
   }
+  public function project_view(){
+    $this->load->view('project_view');
+  }
 
   public function user_log(){
     $this->load->model('Home_model');
@@ -62,6 +65,25 @@ class Home extends CI_Controller
 
 
     redirect('Home/login');
+  }
+
+  public function proj_view($id){
+    $this->load->model('Home_model');
+    $row = $this->Home_model->proj_view($id);
+    if ($row!=false) {
+      $data = array('projid' => $row->projid,
+      'projtitle' => $row->projtitle,
+      'projdes' => $row->projdes,
+      'image' => $row->image,
+      'date' => $row->date
+     );
+      $this->load->view('project_view',$data);
+
+    }
+
+    else {
+      echo "fail";
+    }
   }
 }
 

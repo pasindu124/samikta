@@ -39,7 +39,7 @@ if (!($log)) {
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="active">
+                    <li >
                         <a href="<?php echo base_url('index.php/Admin/index') ?>">
                             <i class="material-icons">dashboard</i>
                             <p>Dashboard</p>
@@ -51,7 +51,7 @@ if (!($log)) {
                             <p>User Profile</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="<?php echo base_url('index.php/Admin/projects') ?>">
                             <i class="material-icons">group_work</i>
                             <p>Projects</p>
@@ -63,7 +63,7 @@ if (!($log)) {
                             <p>Messages</p>
                         </a>
                     </li>
-                    <li>
+                    <li >
                         <a href="<?php echo base_url('index.php/Home/user_logout') ?>">
                             <i class="material-icons">all_out</i>
                             <p>Sign Out</p>
@@ -140,6 +140,67 @@ if (!($log)) {
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
+                      <a href="<?php echo base_url('index.php/Admin/anproject') ?>" class="btn btn-info" role="button">Add new project</a>
+                    </div>
+                    <?php if (isset($error)) {echo $error;}?>
+                    <?php if (($this->session->set_flashdata('prodel'))) {echo $this->session->set_flashdata('prodel');}?>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="card">
+                          <div class="card-header" data-background-color="purple">
+                            <h4 class="title">Projects</h4>
+                          </div>
+                          <div class="class="card-content"">
+                            <table class="table">
+                              <thead>
+                                  <tr>
+                                      <th class="text-center">#</th>
+                                      <th>Project Title</th>
+                                      <th>Description</th>
+                                      <th>Image</th>
+                                      <th class="text-right">Date</th>
+                                      <th class="text-right">Actions</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                <?php $query = $this->db->get('project');
+
+                                ?>
+                                <?php  $num=1;
+                                foreach ($query->result() as $row) {
+                                  $id=$row->projid;
+
+                                ?>
+                                  <tr>
+                                      <td class="text-center"><?php echo $num ?></td>
+                                      <td><?php echo $row->projtitle?></td>
+                                      <td><?php echo substr($row->projdes, 0, 60); ?></td>
+                                      <td><img src="<?php echo base_url(); ?>uploads/<?php echo $row->image ?>" style="width:50px;height:50px;"></td>
+                                      <td class="text-right"><?php echo $row->date ?></td>
+                                      <td class="td-actions text-right" style="float:right;">
+                                          <a href="<?php echo base_url();?>index.php/Admin/project_edit/<?php echo $id ?>" type="button" rel="tooltip" title="Edit" class="btn btn-success btn-simple btn-xs">
+                                              <i class="fa fa-edit"></i>
+                                          </a>
+                                          <a href="<?php echo base_url();?>index.php/Admin/project_delete/<?php echo $id ?>" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                              <i class="fa fa-times"></i>
+                                          </a>
+                                      </td>
+                                  </tr>
+                                <?php
+                                $num+=1;
+                              }
+
+                                ?>
+                              </tbody>
+                          </table>
+
+
+                          </div>
+                        </div>
+
+                      </div>
+
+
 
                     </div>
                 </div>
