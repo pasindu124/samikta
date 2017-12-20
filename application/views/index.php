@@ -39,8 +39,18 @@
             <ul class="nav navbar-nav top_nav">
                 <li><a href="#"><i class="fa fa-phone"></i>041 2224847</a></li>
                 <li><a href="#"><i class="fa fa-envelope-o"></i>samikta9949@gmail.com</a></li>
-                <li><a href="<?php echo base_url('index.php/Home/register') ?>"><i class="fa fa-user-o"></i>Register</a></li>
-                <li><a href="<?php echo base_url('index.php/Home/login') ?>"><i class="fa fa-sign-in"></i>Login</a></li>
+                <?php if($this->session->userdata('userType') == 'admin'){ ?>
+                        <li> <a href="<?php echo base_url('index.php/Login/logout') ?>"><i class="fa fa-sign-out"></i>Log Out</a></li>
+                        <li><a href="#"><i class="fa fa-user-o"></i><?php echo $this->session->userdata('userName'); ?></a></li>
+                 <?php   }elseif($this->session->userdata('userType') == 'customer'){ ?>
+                        <li> <a href="<?php echo base_url('index.php/Login/logout') ?>"><i class="fa fa-sign-out"></i>Log Out</a></li>
+                        <li><a href="#"><i class="fa fa-user-o"></i><?php echo $this->session->userdata('userName'); ?></a></li>
+                 <?php  }else{  ?>
+                        <li><a href="<?php echo base_url('index.php/Home/login') ?>"><i class="fa fa-sign-in"></i>Login</a></li>
+                         <li><a href="<?php echo base_url('index.php/Home/register') ?>"><i class="fa fa-user-o"></i>Register</a></li>
+                  <?php }  ?>
+               
+                
 
             </ul>
             <ul class="nav navbar-nav navbar-right social_nav">
@@ -77,7 +87,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo base_url();?>index.php/Home/index"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt=""></a>
+                    <a class="navbar-brand" style="margin-top:-30px;" href="<?php echo base_url();?>index.php/Home/index"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="" ></a>
                 </div>
             </div>
 
@@ -116,21 +126,21 @@
             <div data-thumb="<?php echo base_url(); ?>assets/images/slider-1.jpg" data-src="<?php echo base_url(); ?>assets/images/slider-1.jpg">
                 <div class="camera_caption">
                    <div class="container">
-                        <h5 class=" wow fadeInUp animated">Welcome to our</h5>
-                        <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s">CLEAN, MODERN, MULTIPURPOSE THEME</h3>
+                        <h5 class=" wow fadeInUp animated">Welcome!</h5>
+                        <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s">Samikta Construction</h3>
                         <p class=" wow fadeInUp animated" data-wow-delay="0.8s">Our team of professionals will help you turn your dream home or flat into a reality fast. The Love Boat promises something for everyone. Now the world don't move to the beat of just one</p>
-                        <a class=" wow fadeInUp animated" data-wow-delay="1s" href="#">Read More</a>
+                        <a class=" wow fadeInUp animated" data-wow-delay="1s" href="<?php echo base_url();?>index.php/Home/contact">Contact</a>
                    </div>
                 </div>
             </div>
             <div data-thumb="<?php echo base_url(); ?>assets/images/slider-2.jpg" data-src="<?php echo base_url(); ?>assets/images/slider-2.jpg">
                 <div class="camera_caption">
-                   <div class="container">
-                        <h5 class=" wow fadeInUp animated">Welcome to our</h5>
-                        <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s">CLEAN ,MODERN, MULTIPURPOSE THEME</h3>
-                        <p class=" wow fadeInUp animated" data-wow-delay="0.8s">Our team of professionals will help you turn your dream home or flat into a reality fast. The Love Boat promises something for everyone. Now the world don't move to the beat of just one</p>
-                        <a class=" wow fadeInUp animated" data-wow-delay="1s" href="#">Read More</a>
-                   </div>
+                  <div class="container">
+                       <h5 class=" wow fadeInUp animated">Welcome!</h5>
+                       <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s">Samikta Construction</h3>
+                       <p class=" wow fadeInUp animated" data-wow-delay="0.8s">Our team of professionals will help you turn your dream home or flat into a reality fast. The Love Boat promises something for everyone. Now the world don't move to the beat of just one</p>
+                       <a class=" wow fadeInUp animated" data-wow-delay="1s" href="<?php echo base_url();?>index.php/Home/contact">Contact</a>
+                  </div>
                 </div>
             </div>
         </div>
@@ -171,15 +181,17 @@
         <div class="container">
             <div class="tittle wow fadeInUp">
                 <h2>ABOUT US</h2>
-                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
+                <h4>“Emerge as the Leading Construction Company in Sri Lanka And Gradual Growth into the International Market”</h4>
             </div>
             <div class="row about_row">
                 <div class="who_we_area col-md-7 col-sm-6">
                     <div class="subtittle">
                         <h2>WHO WE ARE</h2>
                     </div>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                    <a href="#" class="button_all">Contact Now</a>
+                    <p>Twenty years ago, a company was formed to support the country’s development programmes while providing employment opportunities to many talented youths. It is none other than Samikta Construction (Pvt) Ltd. Initially the company undertook small-scale contracts, starting at the base. By ICTAD grading the company was at M7 or C8. Today Samikta Construction (Pvt) Ltd is one of the foremost construction companies in the country holding Grade C1.
+Grade C1 signifies the financial and technical stability of the company to undertake large-scale contracts of huge value and complexity. </p>
+<p>Subsequently, obtaining ISO certification from 2008 has brought Samikta Construction (Pvt) Ltd to international standards. This required the company to enhance its staff as well as supportive services. The company also encompasses modern technologies and techniques to provide total customer satisfaction and on time delivery of Projects.  With this as the motto, the company exerted much to win many awards from prestigious institutions for outstanding performances and quality construction.</p>
+                    <a href="<?php echo base_url();?>index.php/Home/contact" class="button_all">Contact Now</a>
                 </div>
                 <div class="col-md-5 col-sm-6 about_client">
                     <img src="<?php echo base_url(); ?>assets/images/about_client.jpg" alt="">
@@ -496,62 +508,29 @@
             <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
         </div>
         <div class="featured_gallery">
+          <?php
+          $num=0;
+          $query = $this->db->get('project');
+          foreach ($query->result() as $row) {
+            $id=$row->projid;
+
+          ?>
             <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
-                <img src="<?php echo base_url(); ?>assets/images/gallery/gl-1.jpg" alt="">
+                <img src="<?php echo base_url(); ?>uploads/<?php echo $row->image ?>" alt="" style="width:366px;height:244px;">
                 <div class="gallery_hover">
-                    <h4>Bolt Apartments</h4>
-                    <a href="#">VIEW PROJECT</a>
+                    <h4><?php echo $row->projtitle; ?></h4>
+                    <a href="<?php echo base_url('index.php/Home/proj_view/'.$id) ?>">VIEW PROJECT</a>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
-                <img src="<?php echo base_url(); ?>assets/images/gallery/gl-2.jpg" alt="">
-                <div class="gallery_hover">
-                    <h4>Bolt Apartments</h4>
-                    <a href="#">VIEW PROJECT</a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
-                <img src="<?php echo base_url(); ?>assets/images/gallery/gl-3.jpg" alt="">
-                <div class="gallery_hover">
-                    <h4>Bolt Apartments</h4>
-                    <a href="#">VIEW PROJECT</a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
-                <img src="<?php echo base_url(); ?>assets/images/gallery/gl-4.jpg" alt="">
-                <div class="gallery_hover">
-                    <h4>Bolt Apartments</h4>
-                    <a href="#">VIEW PROJECT</a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
-                <img src="<?php echo base_url(); ?>assets/images/gallery/gl-5.jpg" alt="">
-                <div class="gallery_hover">
-                    <h4>Bolt Apartments</h4>
-                    <a href="#">VIEW PROJECT</a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
-                <img src="<?php echo base_url(); ?>assets/images/gallery/gl-6.jpg" alt="">
-                <div class="gallery_hover">
-                    <h4>Bolt Apartments</h4>
-                    <a href="#">VIEW PROJECT</a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
-                <img src="<?php echo base_url(); ?>assets/images/gallery/gl-7.jpg" alt="">
-                <div class="gallery_hover">
-                    <h4>Bolt Apartments</h4>
-                    <a href="#">VIEW PROJECT</a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
-                <img src="<?php echo base_url(); ?>assets/images/gallery/gl-8.jpg" alt="">
-                <div class="gallery_hover">
-                    <h4>Bolt Apartments</h4>
-                    <a href="#">VIEW PROJECT</a>
-                </div>
-            </div>
+          <?php
+          $num+=1;
+          if($num==8){
+            break;
+          }
+         }
+
+
+          ?>
         </div>
     </section>
     <!-- End Our Featured Works Area -->
@@ -625,9 +604,9 @@
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>ABOUT OUR COMPANY</h2>
                     <img src="<?php echo base_url(); ?>assets/images/footer-logo.png" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Emerge as the leading construction company in Sri Lanka and gradual growth into the international market!</p>
                     <ul class="socail_icon">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.facebook.com/300831170250525"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
@@ -636,19 +615,35 @@
                 <div class="col-md-3 col-sm-6 footer_about quick">
                     <h2>Quick links</h2>
                     <ul class="quick_link">
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Building Construction</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Home Renovation</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Hardwood Flooring</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Repairing Of Roof</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Commercial Construction</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Concreate Transport</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/"><i class="fa fa-chevron-right"></i>Home</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/about"><i class="fa fa-chevron-right"></i>About Us </a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/services"><i class="fa fa-chevron-right"></i>Services</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/projects"><i class="fa fa-chevron-right"></i>Projects</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/contact"><i class="fa fa-chevron-right"></i>Contact Us</a></li>
                     </ul>
                 </div>
+                <?php $query = $this->db->query("SELECT * FROM `project` ORDER BY `date` DESC"); ?>
+
                 <div class="col-md-3 col-sm-6 footer_about">
-                    <h2>Twitter Feed</h2>
-                    <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
-                    <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
+                    <h2>Latest Projects</h2>
+                    <?php
+                      $num=0;
+                      foreach ($query->result() as $row) {
+                      $id=$row->projid; ?>
+                      <h4 style="color: white;"><?php echo $row->projtitle ?></h4>
+                      <a href="<?php echo base_url('index.php/Home/proj_view/'.$id) ?>" class="twitter">@<?php echo substr($row->projdes, 0, 60); ?></a>
+                  <?php
+                      $num+=1;
+                      if($num==3){
+                        break;
+                      }
+                }
+
+                  ?>
                 </div>
+
+
+                
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>CONTACT US</h2>
                     <address>

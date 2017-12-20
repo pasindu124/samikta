@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<?php $log = $this->session->userdata('loggedin');
+<?php $log = $this->session->userdata('loggedIn');
 if (!($log)) {
   redirect('Home/login');
 }
@@ -34,7 +34,7 @@ if (!($log)) {
     -->
             <div class="logo">
                 <a href="http://www.creative-tim.com" class="simple-text">
-                  <?php echo $this->session->userdata('fname'); ?>
+                  <?php echo $this->session->userdata('userName'); ?>
                 </a>
             </div>
             <div class="sidebar-wrapper">
@@ -57,14 +57,20 @@ if (!($log)) {
                             <p>Projects</p>
                         </a>
                     </li>
+                     <li>
+                        <a href="<?php echo base_url('index.php/Admin/users') ?>">
+                            <i class="material-icons">person</i>
+                            <p>Users</p>
+                        </a>
+                    </li>
                     <li>
-                        <a href="#">
+                        <a href="<?php echo base_url('index.php/Admin/message') ?>">
                             <i class="material-icons">message</i>
                             <p>Messages</p>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('index.php/Home/user_logout') ?>">
+                        <a href="<?php echo base_url('index.php/Login/logout') ?>">
                             <i class="material-icons">all_out</i>
                             <p>Sign Out</p>
                         </a>
@@ -140,6 +146,8 @@ if (!($log)) {
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
+
+                    <iframe src="https://calendar.google.com/calendar/embed?src=en.lk%23holiday%40group.v.calendar.google.com&ctz=Asia%2FColombo" style="border: 0" width="1200" height="600" frameborder="0" scrolling="no"></iframe>
 
                     </div>
                 </div>

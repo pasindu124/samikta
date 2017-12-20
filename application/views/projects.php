@@ -40,8 +40,16 @@
             <ul class="nav navbar-nav top_nav">
               <li><a href="#"><i class="fa fa-phone"></i>041 2224847</a></li>
               <li><a href="#"><i class="fa fa-envelope-o"></i>samikta9949@gmail.com</a></li>
-              <li><a href="<?php echo base_url('index.php/Home/register') ?>"><i class="fa fa-user-o"></i>Register</a></li>
-              <li><a href="<?php echo base_url('index.php/Home/login') ?>"><i class="fa fa-sign-in"></i>Login</a></li>
+              <?php if($this->session->userdata('userType') == 'admin'){ ?>
+                        <li> <a href="<?php echo base_url('index.php/Login/logout') ?>"><i class="fa fa-sign-out"></i>Log Out</a></li>
+                        <li><a href="#"><i class="fa fa-user-o"></i><?php echo $this->session->userdata('userName'); ?></a></li>
+                 <?php   }elseif($this->session->userdata('userType') == 'customer'){ ?>
+                        <li> <a href="<?php echo base_url('index.php/Login/logout') ?>"><i class="fa fa-sign-out"></i>Log Out</a></li>
+                        <li><a href="#"><i class="fa fa-user-o"></i><?php echo $this->session->userdata('userName'); ?></a></li>
+                 <?php  }else{  ?>
+                        <li><a href="<?php echo base_url('index.php/Home/login') ?>"><i class="fa fa-sign-in"></i>Login</a></li>
+                         <li><a href="<?php echo base_url('index.php/Home/register') ?>"><i class="fa fa-user-o"></i>Register</a></li>
+                  <?php }  ?>
             </ul>
             <ul class="nav navbar-nav navbar-right social_nav">
                 <li><a href="https://www.facebook.com/300831170250525"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -77,7 +85,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt=""></a>
+                    <a class="navbar-brand" style="margin-top:-30px;" href="<?php echo base_url();?>index.php/Home/index"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="" ></a>
                 </div>
             </div>
 
@@ -158,9 +166,9 @@
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>ABOUT OUR COMPANY</h2>
                     <img src="<?php echo base_url(); ?>assets/images/footer-logo.png" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Emerge as the leading construction company in Sri Lanka and gradual growth into the international market!</p>
                     <ul class="socail_icon">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.facebook.com/300831170250525"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
@@ -169,19 +177,35 @@
                 <div class="col-md-3 col-sm-6 footer_about quick">
                     <h2>Quick links</h2>
                     <ul class="quick_link">
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Building Construction</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Home Renovation</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Hardwood Flooring</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Repairing Of Roof</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Commercial Construction</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Concreate Transport</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/"><i class="fa fa-chevron-right"></i>Home</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/about"><i class="fa fa-chevron-right"></i>About Us </a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/services"><i class="fa fa-chevron-right"></i>Services</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/projects"><i class="fa fa-chevron-right"></i>Projects</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/contact"><i class="fa fa-chevron-right"></i>Contact Us</a></li>
                     </ul>
                 </div>
+                <?php $query = $this->db->query("SELECT * FROM `project` ORDER BY `date` DESC"); ?>
+
                 <div class="col-md-3 col-sm-6 footer_about">
-                    <h2>Twitter Feed</h2>
-                    <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
-                    <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
+                    <h2>Latest Projects</h2>
+                    <?php
+                      $num=0;
+                      foreach ($query->result() as $row) {
+                      $id=$row->projid; ?>
+                      <h4 style="color: white;"><?php echo $row->projtitle ?></h4>
+                      <a href="<?php echo base_url('index.php/Home/proj_view/'.$id) ?>" class="twitter">@<?php echo substr($row->projdes, 0, 60); ?></a>
+                  <?php
+                      $num+=1;
+                      if($num==3){
+                        break;
+                      }
+                }
+
+                  ?>
                 </div>
+
+
+
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>CONTACT US</h2>
                     <address>

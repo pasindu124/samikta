@@ -23,6 +23,31 @@ class Admin_model extends CI_model
 
   }
 
+  public function addUser(){
+    $uname=$this->input->post('username',TRUE);
+    $pass=$this->input->post('pass',TRUE);
+    $cpass=$this->input->post('cpass',TRUE);
+    $type='admin';
+    if($pass==$cpass){
+      $userdata = array(  'userName' =>$uname ,
+                           'password' =>$pass ,
+                           'userType' => $type
+
+                         );
+
+       $this->db->insert('user', $userdata);
+    return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+
+
+
+
+    return false;
+
+
+  }
+
   public function editproject($id){
     $this->db->select('*');
     $this->db->from('project');
@@ -30,6 +55,15 @@ class Admin_model extends CI_model
     $query = $this->db->get();
     $row = $query->row();
     //echo $row->projtitle;
+    return $row;
+  }
+  public function edituser($id){
+    $this->db->select('*');
+    $this->db->from('user');
+    $this->db->where('userID', $id);
+    $query = $this->db->get();
+    $row = $query->row();
+
     return $row;
   }
 
@@ -51,10 +85,50 @@ class Admin_model extends CI_model
 
 
   }
+  public function updateUser($id){
+    $uname=$this->input->post('uname',TRUE);
+    $pass=$this->input->post('pass',TRUE);
+    $cpass=$this->input->post('cpass',TRUE);
+
+   if($pass==$cpass){
+      $userdata = array(  'userName' =>$uname ,
+
+                             'password' =>md5($pass) ,
+
+
+                             'password' =>$pass ,
+
+
+
+                           );
+
+
+      $this->db->where('userID', $id);
+      $this->db->update('user', $userdata);
+      return ($this->db->affected_rows() != 1) ? false : true;
+    }else{
+      return false;
+    }
+
+
+
+
+  }
+  public function viewmsg($id){
+   $mid=$id;
+   $query = $this->db->query("SELECT * FROM `message` WHERE `id`='$mid'");
+   $row = $query->row();
+   return $row;
+ }
 
   public function proj_delete($id){
     $this->db->where('projid', $id);
     $this->db->delete('project');
+    return ($this->db->affected_rows() != 1) ? false : true;
+  }
+  public function userDelete($id){
+    $this->db->where('userID', $id);
+    $this->db->delete('user');
     return ($this->db->affected_rows() != 1) ? false : true;
   }
 }

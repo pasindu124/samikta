@@ -24,6 +24,7 @@
     <!--Theme Styles CSS-->
 	   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css" media="all" />
      <link href="<?php echo base_url(); ?>assets/css/material-kit.css" rel="stylesheet"/>
+     <link href="<?php echo base_url(); ?>assets/css/stars.css" rel="stylesheet"/>
 
 
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,8 +43,16 @@
             <ul class="nav navbar-nav top_nav">
               <li><a href="#"><i class="fa fa-phone"></i>041 2224847</a></li>
               <li><a href="#"><i class="fa fa-envelope-o"></i>samikta9949@gmail.com</a></li>
-              <li><a href="<?php echo base_url('index.php/Home/register') ?>"><i class="fa fa-user-o"></i>Register</a></li>
-              <li><a href="<?php echo base_url('index.php/Home/login') ?>"><i class="fa fa-sign-in"></i>Login</a></li>
+              <?php if($this->session->userdata('userType') == 'admin'){ ?>
+                        <li> <a href="<?php echo base_url('index.php/Login/logout') ?>"><i class="fa fa-sign-out"></i>Log Out</a></li>
+                        <li><a href="#"><i class="fa fa-user-o"></i><?php echo $this->session->userdata('userName'); ?></a></li>
+                 <?php   }elseif($this->session->userdata('userType') == 'customer'){ ?>
+                        <li> <a href="<?php echo base_url('index.php/Login/logout') ?>"><i class="fa fa-sign-out"></i>Log Out</a></li>
+                        <li><a href="#"><i class="fa fa-user-o"></i><?php echo $this->session->userdata('userName'); ?></a></li>
+                 <?php  }else{  ?>
+                        <li><a href="<?php echo base_url('index.php/Home/login') ?>"><i class="fa fa-sign-in"></i>Login</a></li>
+                         <li><a href="<?php echo base_url('index.php/Home/register') ?>"><i class="fa fa-user-o"></i>Register</a></li>
+                  <?php }  ?>
             </ul>
             <ul class="nav navbar-nav navbar-right social_nav">
                 <li><a href="https://www.facebook.com/300831170250525"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -79,7 +88,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt=""></a>
+                    <a class="navbar-brand" style="margin-top:-30px;" href="<?php echo base_url();?>index.php/Home/index"><img src="<?php echo base_url(); ?>assets/images/logo.png" alt="" ></a>
                 </div>
             </div>
 
@@ -157,7 +166,7 @@
                               <img src="<?php echo base_url(); ?>uploads/<?php echo $image ?>" alt="Awesome Image">
                               <div class="carousel-caption">
                                 <!-- we can use this area for data inside image -->
-                                
+
                               </div>
                             </div>
                           </div>
@@ -183,12 +192,98 @@
         </div>
 
     </section>
+    <?php $query = $this->db->query("SELECT * FROM `feedback` WHERE `uid`=1 AND`pid`='$projid'"); //userid
+          $feedback=0;
+          $flag=0;
+          if ($query->num_rows()==1) {
+            $flag=1;
+            $row = $query->row();
+            $feedback=$row->feedback;
 
+          }
+
+          $query1 = $this->db->query("SELECT `feedback` FROM `project` WHERE `projid`='$projid'");
+          $row1 = $query1->row();
+    ?>
+    </div>
+    <div class="row">
+      <section class="our_feature_area">
+        <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="">
+                    <h4>Give a feedback to this project...</h4>
+                    <div class="stars">
+                      <?php echo form_open('Comment/givefeedback/'.$projid); ?>
+
+                        <input class="star star-5" id="star-5" type="radio" name="star" value="5" <?php if($feedback==5){?>checked<?php } ?>  <?php if($flag==1){?>disabled<?php } ?>/>
+                        <label class="star star-5" for="star-5"></label>
+                        <input class="star star-4" id="star-4" type="radio" name="star" value="4" <?php if($feedback==4){?>checked<?php } ?>  <?php if($flag==1){?>disabled<?php } ?>/>
+                        <label class="star star-4" for="star-4"></label>
+                        <input class="star star-3" id="star-3" type="radio" name="star" value="3" <?php if($feedback==3){?>checked<?php } ?>  <?php if($flag==1){?>disabled<?php } ?>/>
+                        <label class="star star-3" for="star-3"></label>
+                        <input class="star star-2" id="star-2" type="radio" name="star" value="2" <?php if($feedback==2){?>checked<?php } ?>  <?php if($flag==1){?>disabled<?php } ?>/>
+                        <label class="star star-2" for="star-2"></label>
+                        <input class="star star-1" id="star-1" type="radio" name="star" value="1" <?php if($feedback==1){?>checked<?php } ?>  <?php if($flag==1){?>disabled<?php } ?>/>
+                        <label class="star star-1" for="star-1"></label>
+                        <button style="background-color:orange;" type="submit" class="btn btn-primary" <?php if($flag==1){?>disabled<?php } ?>>Give Feedback</button>
+                      </form>
+                    </div>
+                    <p>Average feedback score: <?php echo $row1->feedback ?></p>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="tittle wow fadeInUp" style="text-align: left;">
+                      <h2 >Leave a comment..</h2>
+                  </div>
+              </div>
+              </div>
+
+              <div class="row">
+                <div class="container">
+                        <?php $query = $this->db->query("SELECT * FROM `comment` WHERE `pid`='$projid'"); ?>
+                        <div class="row" style="margin-top:20px;">
+                          <?php
+                            $num=0;
+                            foreach ($query->result() as $row) { ?>
+                          <div class="col-md-10">
+                            <div class="panel panel-default">
+                              <div class="panel-heading">User id:<?php echo $row->uid ?></div>
+                              <div class="panel-body"><?php echo $row->text ?></div>
+                            </div>
+                          </div>
+
+                        <?php }?>
+
+
+
+                        </div>
+                        <div class="row">
+                          <div class="col-md-8">
+                            <?php echo form_open('Comment/insertcomment/'.$projid); ?>
+                              <div class="form-group">
+                                <label for="comment">Comment:</label>
+                                <textarea class="form-control" rows="5" cols="4" name="comment"></textarea>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                              </div>
+                            </form>
+                          </div>
+
+                        </div>
+                </div>
+              </div>
+
+
+      </section>
     </div>
   </div>
 
 
-</div>
+
 
 
     <!-- Footer Area -->
@@ -198,9 +293,9 @@
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>ABOUT OUR COMPANY</h2>
                     <img src="<?php echo base_url(); ?>assets/images/footer-logo.png" alt="">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Emerge as the leading construction company in Sri Lanka and gradual growth into the international market!</p>
                     <ul class="socail_icon">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.facebook.com/300831170250525"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
@@ -209,19 +304,35 @@
                 <div class="col-md-3 col-sm-6 footer_about quick">
                     <h2>Quick links</h2>
                     <ul class="quick_link">
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Building Construction</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Home Renovation</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Hardwood Flooring</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Repairing Of Roof</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Commercial Construction</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i>Concreate Transport</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/"><i class="fa fa-chevron-right"></i>Home</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/about"><i class="fa fa-chevron-right"></i>About Us </a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/services"><i class="fa fa-chevron-right"></i>Services</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/projects"><i class="fa fa-chevron-right"></i>Projects</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/Home/contact"><i class="fa fa-chevron-right"></i>Contact Us</a></li>
                     </ul>
                 </div>
+                <?php $query = $this->db->query("SELECT * FROM `project` ORDER BY `date` DESC"); ?>
+
                 <div class="col-md-3 col-sm-6 footer_about">
-                    <h2>Twitter Feed</h2>
-                    <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
-                    <a href="#" class="twitter">@colorlib: Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</a>
+                    <h2>Latest Projects</h2>
+                    <?php
+                      $num=0;
+                      foreach ($query->result() as $row) {
+                      $id=$row->projid; ?>
+                      <h4 style="color: white;"><?php echo $row->projtitle ?></h4>
+                      <a href="<?php echo base_url('index.php/Home/proj_view/'.$id) ?>" class="twitter">@<?php echo substr($row->projdes, 0, 60); ?></a>
+                  <?php
+                      $num+=1;
+                      if($num==3){
+                        break;
+                      }
+                }
+
+                  ?>
                 </div>
+
+
+
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>CONTACT US</h2>
                     <address>

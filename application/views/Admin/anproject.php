@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<?php $log = $this->session->userdata('loggedin');
+<?php $log = $this->session->userdata('loggedIn');
 if (!($log)) {
   redirect('Home/login');
 }
@@ -58,13 +58,19 @@ if (!($log)) {
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<?php echo base_url('index.php/Admin/users') ?>">
+                            <i class="material-icons">person</i>
+                            <p>Users</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Admin/message') ?>">
                             <i class="material-icons">message</i>
                             <p>Messages</p>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('index.php/Home/user_logout') ?>">
+                        <a href="<?php echo base_url('index.php/Login/logout') ?>">
                             <i class="material-icons">all_out</i>
                             <p>Sign Out</p>
                         </a>
@@ -144,7 +150,7 @@ if (!($log)) {
                       <div class="col-md-8">
                          <div class="card">
                              <div class="card-header" data-background-color="purple">
-                                 <h4 class="title">Add New Project</h4>
+                                 <h4 class="title">Add New User</h4>
                  <p class="category"></p>
                              </div>
                              <div class="card-content">
