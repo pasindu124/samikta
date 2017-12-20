@@ -182,7 +182,17 @@ if (!($log)) {
                                                    <label>Description</label>
                                                    <div class="form-group label-floating">
                                                        <label class="control-label"> Add text here.</label>
-                                                       <textarea class="form-control" name="description" rows="5" value="" ><?php echo $projdes; ?></textarea>
+                                                       <!-- <textarea class="form-control" name="description" rows="5" value="" ><?php //echo $projdes; ?></textarea> -->
+
+                                                       <div class="col-md-12">
+                                                           <br/>
+                                                           <label></label>		<textarea name="description" id="news_description" class="form-control" rows="16"><?php echo $projdes; ?></textarea>
+                                                           <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/ckeditor/ckeditor.js"></script>
+                                                           <script type="text/javascript">
+                                                                      CKEDITOR.replace( 'news_description' );
+                                                                      CKEDITOR.resize( '100%', '350', true )
+                                                           </script>
+                                                       </div>
                                                   </div>
                                              </div>
                                          </div>
