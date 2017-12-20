@@ -10,7 +10,7 @@ if (!($log)) {
     <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url(); ?>assets/img/apple-icon.png" />
     <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Material Dashboard by Creative Tim</title>
+    <title>Admin Panel</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Bootstrap core CSS     -->
@@ -32,11 +32,11 @@ if (!($log)) {
 
         Tip 2: you can also add an image using data-image tag
     -->
-            <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                  <?php echo $this->session->userdata('fname'); ?>
-                </a>
-            </div>
+    <div class="logo">
+        <a href="http://www.creative-tim.com" class="simple-text">
+          <?php echo $this->session->userdata('userName'); ?>
+        </a>
+    </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
                     <li >
@@ -73,6 +73,10 @@ if (!($log)) {
                         <a href="<?php echo base_url('index.php/Login/logout') ?>">
                             <i class="material-icons">all_out</i>
                             <p>Sign Out</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                      <a style="background-color:green;"href="<?php echo base_url('index.php/') ?>" target="_blank" class="btn btn-info" role="button"><b>Visit to Website</b></a>
                         </a>
                     </li>
 

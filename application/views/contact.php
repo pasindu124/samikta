@@ -41,16 +41,18 @@
               <li><a href="#"><i class="fa fa-phone"></i>041 2224847</a></li>
               <li><a href="#"><i class="fa fa-envelope-o"></i>samikta9949@gmail.com</a></li>
               <?php if($this->session->userdata('userType') == 'admin'){ ?>
-                        <li> <a href="<?php echo base_url('index.php/Login/logout') ?>"><i class="fa fa-sign-out"></i>Log Out</a></li>
-                        <li><a href="#"><i class="fa fa-user-o"></i><?php echo $this->session->userdata('userName'); ?></a></li>
-                 <?php   }elseif($this->session->userdata('userType') == 'customer'){ ?>
-                        <li> <a href="<?php echo base_url('index.php/Login/logout') ?>"><i class="fa fa-sign-out"></i>Log Out</a></li>
-                        <li><a href="#"><i class="fa fa-user-o"></i><?php echo $this->session->userdata('userName'); ?></a></li>
-                 <?php  }else{  ?>
-                        <li><a href="<?php echo base_url('index.php/Home/login') ?>"><i class="fa fa-sign-in"></i>Login</a></li>
-                         <li><a href="<?php echo base_url('index.php/Home/register') ?>"><i class="fa fa-user-o"></i>Register</a></li>
-                  <?php }  ?>
-               
+                      <li> <a href="<?php echo base_url('index.php/Login/logout') ?>"><i class="fa fa-sign-out"></i>Log Out</a></li>
+                      <li><a href="#"><i class="fa fa-user-o"></i><?php echo $this->session->userdata('userName'); ?></a></li>
+                      <a style="background-color:green;margin:10px; "href="<?php echo base_url('index.php/Admin') ?>" target="_blank" class="btn btn-info" role="button"><b>Admin Panel</b></a>
+
+               <?php   }elseif($this->session->userdata('userType') == 'customer'){ ?>
+                      <li> <a href="<?php echo base_url('index.php/Login/logout') ?>"><i class="fa fa-sign-out"></i>Log Out</a></li>
+                      <li><a href="#"><i class="fa fa-user-o"></i><?php echo $this->session->userdata('userName'); ?></a></li>
+               <?php  }else{  ?>
+                      <li><a href="<?php echo base_url('index.php/Home/login') ?>"><i class="fa fa-sign-in"></i>Login</a></li>
+                       <li><a href="<?php echo base_url('index.php/Home/register') ?>"><i class="fa fa-user-o"></i>Register</a></li>
+                <?php }  ?>
+
             </ul>
             <ul class="nav navbar-nav navbar-right social_nav">
                 <li><a href="https://www.facebook.com/300831170250525"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
