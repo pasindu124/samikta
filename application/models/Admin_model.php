@@ -25,8 +25,8 @@ class Admin_model extends CI_model
 
   public function addUser(){
     $uname=$this->input->post('username',TRUE);
-    $pass=$this->input->post('pass',TRUE);
-    $cpass=$this->input->post('cpass',TRUE);
+    $pass=md5($this->input->post('pass',TRUE));
+    $cpass=md5($this->input->post('cpass',TRUE));
     $type='admin';
     if($pass==$cpass){
       $userdata = array(  'userName' =>$uname ,
