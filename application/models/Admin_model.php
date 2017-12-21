@@ -18,7 +18,30 @@ class Admin_model extends CI_model
     //print_r($data_array);
 
     $this->db->insert('project', $projectdata);
-    return ($this->db->affected_rows() != 1) ? false : true;
+    $insert_id = $this->db->insert_id();
+    return ($this->db->affected_rows() != 1) ? false : $insert_id;
+
+
+  }
+
+  public function addprojectimages($proid,$dataInfo,$cpt){
+    if ($cpt>0) {
+      for($i=0; $i<$cpt; $i++){
+        $name = $dataInfo[$i]['file_name'];
+        $data = array('projid' =>$proid ,
+                'imgname' =>$name
+        );
+        if(!empty($name)){
+          $this->db->insert('image', $data);
+
+        }
+
+
+       }
+       return ($this->db->affected_rows() > 0) ? true : false;
+    }else {
+      return true;
+    }
 
 
   }
@@ -123,6 +146,8 @@ class Admin_model extends CI_model
 
   public function proj_delete($id){
     $this->db->where('projid', $id);
+    $this->db->delete('image');
+    $this->db->where('projid', $id);
     $this->db->delete('project');
     return ($this->db->affected_rows() != 1) ? false : true;
   }
@@ -130,6 +155,14 @@ class Admin_model extends CI_model
     $this->db->where('userID', $id);
     $this->db->delete('user');
     return ($this->db->affected_rows() != 1) ? false : true;
+  }
+
+  public function projimgdel($proid,$imgid){
+    $this->db->where('projid', $proid);
+    $this->db->where('id', $imgid);
+    $this->db->delete('image');
+    return ($this->db->affected_rows() != 1) ? false : true;
+
   }
 }
 

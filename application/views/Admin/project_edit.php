@@ -200,12 +200,30 @@ if (!($log)) {
 
                                        <div class="row">
                                          <div class="col-md-6">
+                                           <label>Change main image</label>
                                            <input type="file" name="userfile" size="20" value="pa"/>
                                          </div>
                                          <div class="col-md-6">
                                            <img src="<?php echo base_url(); ?>uploads/<?php echo $image ?>" alt="" style="height:200px;">
                                          </div>
 
+                                       </div>
+                                       <div class="row">
+                                         <div class="col-md-6">
+                                           <label>Upload more images</label>
+                                           <input type="file" name="userfiles[]" multiple="multiple">
+                                         </div>
+
+                                       </div>
+                                       <div class="row">
+                                         <?php $qua = $this->db->query("SELECT * FROM `image` WHERE projid = '$projid'");?>
+                                         <?php $num=1;foreach ($qua->result() as $row) { ?>
+                                           <div class="col-md-2">
+                                             <img src="<?php echo base_url(); ?>uploads/images/<?php echo $row->imgname ?>" alt="" style="width:70px;height:70px;">
+                                             <a href="<?php echo base_url('index.php/Admin/proj_img_del/'.$projid.'/'.$row->id) ?>" class="btn btn-primary btn-xs" style="background-color:orange;" role="button">Remove</a>
+                                           </div>
+
+                                         <?php }?>
                                        </div>
 
                                      <button type="submit" class="btn btn-primary pull-right">Update</button>

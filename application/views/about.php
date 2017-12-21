@@ -147,8 +147,9 @@
                     <div class="subtittle">
                         <h2>WHO WE ARE</h2>
                     </div>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                    <a href="#" class="button_all">Contact Now</a>
+                    <p>Twenty years ago, a company was formed to support the country’s development programmes while providing employment opportunities to many talented youths. It is none other than Samikta Constructions (Pvt) Ltd. Initially the company undertook small-scale contracts, starting at the base. By ICTAD grading the company was at M7 or C8. Today Samikta Constructions Ltd is one of the foremost construction companies in the country holding Grade C1.</p>
+                    <p>Grade C1 signifies the financial and technical stability of the company to undertake large-scale contracts of huge value and complexity. Subsequently, obtaining ISO certification from 2008 has brought Samikta Constructions (Pvt) Ltd to international standards. This required the company to enhance its staff as well as supportive services. The company also encompasses modern technologies and techniques to provide total customer satisfaction and on time delivery of Projects.  With this as the motto, the company exerted much to win many awards from prestigious institutions for outstanding performances and quality construction.</p>
+                    <a href="<?php echo base_url('index.php/Home/contact'); ?>" class="button_all">Contact Now</a>
                 </div>
             </div>
         </div>
@@ -158,12 +159,9 @@
     <!-- call Area -->
     <section class="call_min_area">
         <div class="container">
-            <h2>+880 123 456 789</h2>
-            <p>Contact With Us. We are the top Construction Company. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <div class="call_btn">
-                <a href="#" class="button_all">GET IN TOUCH</a>
-                <a href="#" class="button_all">QUICK QUOTE</a>
-            </div>
+            <h2>071 8337406</h2>
+            <p>Contact With Us. We are the top Construction Company. </p>
+
         </div>
     </section>
     <!-- End call Area -->
@@ -173,16 +171,15 @@
         <div class="container">
             <div class="tittle wow fadeInUp">
                 <h2>Our Features</h2>
-                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
+                <h4>EMERGE AS THE LEADING CONSTRUCTION COMPANY IN SRI LANKA AND GRADUAL GROWTH INTO THE INTERNATIONAL MARKET</h4>
             </div>
             <div class="feature_row row">
                 <div class="col-md-6 feature_img">
-                    <img src="<?php echo base_url(); ?>assets/images/feature-man.jpg" alt="">
+                    <img src="<?php echo base_url(); ?>assets/images/feature-man1.jpg" alt="">
                 </div>
                 <div class="col-md-6 feature_content">
                     <div class="subtittle">
                         <h2>WHY CHOOSE US</h2>
-                        <h5>There are many variations of passages of Lorem Ipsum available.</h5>
                     </div>
                     <div class="media">
                         <div class="media-left">
@@ -191,8 +188,8 @@
                             </a>
                         </div>
                         <div class="media-body">
-                            <a href="#">30+ YEARS OF EXPERIENCE</a>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting indus-try. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                            <a href="#">20+ YEARS OF EXPERIENCE</a>
+                            <p>Twenty years ago, a company was formed to support the country’s development programmes while providing employment opportunities to many talented youths. It is none other than Samikta Constructions (Pvt) Ltd. Initially the company undertook small-scale contracts, starting at the base. By ICTAD grading the company was at M7 or C8. Today Samikta Constructions Ltd is one of the foremost construction companies in the country holding Grade C1.</p>
                         </div>
                     </div>
                     <div class="media">
@@ -202,8 +199,8 @@
                             </a>
                         </div>
                         <div class="media-body">
-                            <a href="#">QUALIFIED EXPERTS</a>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting indus-try. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                            <a href="#">OUR VISION</a>
+                            <p>“Emerge as the Leading Construction Company in Sri Lanka And Gradual Growth into the International Market”</p>
                         </div>
                     </div>
                     <div class="media">
@@ -213,8 +210,8 @@
                             </a>
                         </div>
                         <div class="media-body">
-                            <a href="#">Best Customer Services</a>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting indus-try. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                            <a href="#">OUR MISSION</a>
+                            <p>We Samikta are committed to provide quality products and services to our valued customers in reliable, fast, courteous manner to satisfy their needs, legal requirements and to strengthen our financial status. Increase competitiveness through quality to ensure company growth and survival with committed employees. We continually improve our quality management system. We will develop our suppliers and the construction industry in the country.</p>
                         </div>
                     </div>
                 </div>
@@ -225,19 +222,19 @@
 
     <!-- Our Partners Area -->
     <section class="our_partners_area">
-        <div class="book_now_aera">
-            <div class="container">
-                <div class="row book_now">
-                    <div class="col-md-10 booking_text">
-                        <h4>Booking now if you need build your dream home.</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="col-md-2 p0 book_bottun">
-                        <a href="#" class="button_all">book now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="book_now_aera">
+          <div class="container">
+              <div class="row book_now">
+                  <div class="col-md-10 booking_text">
+                      <h4>Booking now if you need build your dream home.</h4>
+                      <p>EMERGE AS THE LEADING CONSTRUCTION COMPANY IN SRI LANKA AND GRADUAL GROWTH INTO THE INTERNATIONAL MARKET</p>
+                  </div>
+                  <div class="col-md-2 p0 book_bottun">
+                      <a href="<?php echo base_url('index.php/Home/contact'); ?>" class="button_all">book now</a>
+                  </div>
+              </div>
+          </div>
+      </div>
     </section>
     <!-- End Our Partners Area -->
 

@@ -141,12 +141,15 @@
                     <div class="card card-raised card-carousel">
                       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                         <div class="carousel slide" data-ride="carousel">
+                          <?php $qua = $this->db->query("SELECT * FROM `image` WHERE projid = '$projid'");?>
 
                           <!-- Indicators -->
                           <ol class="carousel-indicators">
                             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            <?php $num=1;foreach ($qua->result() as $row) { ?>
+                            <li data-target="#carousel-example-generic" data-slide-to="<?php echo $num; ?>"></li>
+                          <?php $num+=1;} ?>
+
                           </ol>
 
                           <!-- Wrapper for slides -->
@@ -157,20 +160,18 @@
                                   <!-- we can use this area for data inside image -->
                               </div>
                             </div>
+
+
+                          <?php foreach ($qua->result() as $row) { ?>
                             <div class="item">
-                              <img src="<?php echo base_url(); ?>uploads/<?php echo $image ?>" alt="Awesome Image">
+                              <img src="<?php echo base_url(); ?>uploads/images/<?php echo $row->imgname ?>" alt="Awesome Image">
                               <div class="carousel-caption">
                                 <!-- we can use this area for data inside image -->
 
                               </div>
                             </div>
-                            <div class="item">
-                              <img src="<?php echo base_url(); ?>uploads/<?php echo $image ?>" alt="Awesome Image">
-                              <div class="carousel-caption">
-                                <!-- we can use this area for data inside image -->
 
-                              </div>
-                            </div>
+                          <?php } ?>
                           </div>
 
                           <!-- Controls -->

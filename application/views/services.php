@@ -151,9 +151,11 @@
                             <div class="subtittle">
                                 <h2>ARCHITECTURE</h2>
                             </div>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alter-ation in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrass-ing hidden in the middle of text.</p>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
-                            <a href="#" class="button_all">Contact Now</a>
+                            <p><b>DESIGN & BUILD</b> : This is an innovative approach initiated by Samikta Contractors (Pvt) recently. Samikta has built up an image for delivering construction Solutions on time with the budgeted framework for its clients.</p>
+                            <p><b>BUILDING CONSTRUCTION</b>: We offer end-to-end solutions for clients seeking construction of the following types of buildings</p>
+                            <p><b>CONSULTANCY SERVICE</b>: This is another step to spread out scope in Construction Industry of Sri Lanka.At Samikta contractors (Pvt) Ltd, we have got chartered consultants with well-experienced & knowledge to deliver a valuable service to the clients in Sri Lanka.</p>
+
+                            <a href="<?php echo base_url('index.php/Home/contact'); ?>" class="button_all">Contact Now</a>
                         </div>
                     </div>
                     <div class="single_facilities col-sm-5 painting webdesign">
@@ -169,7 +171,6 @@
     <section class="featured_works row" data-stellar-background-ratio="0.3">
         <div class="tittle wow fadeInUp">
             <h2>Our Featured Works</h2>
-            <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
         </div>
         <div class="featured_gallery">
           <?php
@@ -205,7 +206,6 @@
         <div class="container">
             <div class="tittle wow fadeInUp">
                 <h2>Our Team</h2>
-                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
             </div>
             <div class="row team_row">
                 <div class="col-md-3 col-sm-6 wow fadeInUp">

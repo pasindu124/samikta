@@ -202,7 +202,19 @@ if (!($log)) {
 
                                        <div class="row">
                                          <div class="col-md-12">
+                                           <label class="control-label" style="font-size: large;">Main Image</label>
+                                           <label class="control-label"> Choose one image.</label>
                                            <input type="file" name="userfile" size="20" />
+                                         </div>
+
+                                       </div>
+
+                                       <div class="row">
+                                         <div class="col-md-12">
+                                           <label class="control-label" style="font-size: large;">Other Images</label>
+                                           <label class="control-label"> Choose all images.</label>
+
+                                           <input type="file" name="userfiles[]" multiple="multiple">
                                          </div>
 
                                        </div>
@@ -210,6 +222,20 @@ if (!($log)) {
                                      <button type="submit" class="btn btn-primary pull-right">Add</button>
                                      <div class="clearfix"></div>
                                  </form>
+
+
+                                 <!-- <?php// echo form_open_multipart('Admin/do_upload_all');?>
+                                 <div class="row">
+                                   <div class="col-md-12">
+                                     <label class="control-label" style="font-size: large;">Other Images</label>
+                                     <label class="control-label"> Choose all images.</label>
+
+                                     <input type="file" name="userfiles[]" multiple="multiple">
+                                   </div>
+                                   <button type="submit" class="btn btn-primary pull-right">Add</button>
+                                 </div>
+                                  </form> -->
+
                              </div>
                          </div>
                      </div>

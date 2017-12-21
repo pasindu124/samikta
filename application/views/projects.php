@@ -144,7 +144,7 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="renovation">
                         <img src="<?php echo base_url(); ?>uploads/<?php echo $row->image ?>" alt="">
-                        <div class="renovation_content">
+                        <div class="renovation_content" style="height:250px;max-height:250px;">
                             <a class="clipboard" href="<?php echo base_url('index.php/Home/proj_view/'.$id) ?>"><i class="fa fa-clipboard" aria-hidden="true"></i></a>
                             <a class="tittle" href="<?php echo base_url('index.php/Home/proj_view/'.$id) ?>"><?php echo $row->projtitle ?></a>
                             <div class="date_comment">

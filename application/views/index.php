@@ -156,22 +156,22 @@
                 <div class="col-md-3 col-sm-6 builder">
                     <i class="fa fa-home" aria-hidden="true"></i>
                     <h4>Professional Builde</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod </p>
+                    <p></p>
                 </div>
                 <div class="col-md-3 col-sm-6 builder">
                     <i class="fa fa-building" aria-hidden="true"></i>
                     <h4>We Deliver Quality</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod </p>
+                    <p></p>
                 </div>
                 <div class="col-md-3 col-sm-6 builder">
                     <i class="fa fa-clock-o" aria-hidden="true"></i>
                     <h4>Always On Time</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod </p>
+                    <p></p>
                 </div>
                 <div class="col-md-3 col-sm-6 builder">
                     <i class="fa fa-thumbs-up" aria-hidden="true"></i>
                     <h4>We Are Pasionate</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod </p>
+                    <p></p>
                 </div>
            </div>
         </div>
@@ -208,37 +208,38 @@ Grade C1 signifies the financial and technical stability of the company to under
         <div class="container">
             <div class="tittle wow fadeInUp">
                 <h2>WHAT WE OFFER</h2>
-                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
+                <h4>EMERGE AS THE LEADING CONSTRUCTION COMPANY IN SRI LANKA AND GRADUAL GROWTH INTO THE INTERNATIONAL MARKET</h4>
             </div>
             <div class="row construction_iner">
-                <div class="col-md-4 col-sm-6 construction">
-                   <div class="cns-img">
-                        <img src="<?php echo base_url(); ?>assets/images/cns-1.jpg" alt="">
-                   </div>
-                   <div class="cns-content">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <a href="#">BUILDING CONSTRUCTION</a>
-                        <p>Lorem Ipsum is simply dummy text of the print-ing and typesetting industry. Lorem Ipsum has been the industry's standard dummy </p>
-                   </div>
-                </div>
-                <div class="col-md-4 col-sm-6 construction">
+
+                <div class="col-md-4 col-sm-6 construction" >
                    <div class="cns-img">
                         <img src="<?php echo base_url(); ?>assets/images/cns-2.jpg" alt="">
                    </div>
-                   <div class="cns-content">
+                   <div class="cns-content" style="height:300px;max-height:300px;">
                         <i class="fa fa-keyboard-o" aria-hidden="true"></i>
-                        <a href="#">PROJECT PLANNING</a>
-                        <p>Lorem Ipsum is simply dummy text of the print-ing and typesetting industry. Lorem Ipsum has been the industry's standard dummy </p>
+                        <a href="#">Design & Build</a>
+                        <p>This is an innovative approach initiated by Samikta Contractors (Pvt) recently. Samikta has built up an image for delivering construction Solutions on time with the budgeted framework for its clients. </p>
+                   </div>
+                </div>
+                <div class="col-md-4 col-sm-6 construction" >
+                   <div class="cns-img">
+                        <img src="<?php echo base_url(); ?>assets/images/cns-1.jpg" alt="">
+                   </div>
+                   <div class="cns-content" style="height:300px;max-height:300px;">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <a href="#">BUILDING CONSTRUCTION</a>
+                        <p>We offer end-to-end solutions for clients seeking construction of the following types of buildings </p>
                    </div>
                 </div>
                 <div class="col-md-4 col-sm-6 construction">
                    <div class="cns-img">
                         <img src="<?php echo base_url(); ?>assets/images/cns-3.jpg" alt="">
                    </div>
-                   <div class="cns-content">
+                   <div class="cns-content" style="height:300px;max-height:300px;">
                         <i class="fa fa-gavel" aria-hidden="true"></i>
-                        <a href="#">HOUSE RENOVATION</a>
-                        <p>Lorem Ipsum is simply dummy text of the print-ing and typesetting industry. Lorem Ipsum has been the industry's standard dummy </p>
+                        <a href="#">Consultancy Service</a>
+                        <p>This is another step to spread out scope in Construction Industry of Sri Lanka.At Samikta   contractors (Pvt) Ltd, we have got chartered consultants with well-experienced & knowledge to deliver a valuable service to the clients in Sri Lanka. </p>
                    </div>
                 </div>
             </div>
@@ -251,16 +252,15 @@ Grade C1 signifies the financial and technical stability of the company to under
         <div class="container">
             <div class="tittle wow fadeInUp">
                 <h2>Our Features</h2>
-                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
+                <h4>EMERGE AS THE LEADING CONSTRUCTION COMPANY IN SRI LANKA AND GRADUAL GROWTH INTO THE INTERNATIONAL MARKET</h4>
             </div>
             <div class="feature_row row">
                 <div class="col-md-6 feature_img">
-                    <img src="<?php echo base_url(); ?>assets/images/feature-man.jpg" alt="">
+                    <img src="<?php echo base_url(); ?>assets/images/feature-man1.jpg" alt="">
                 </div>
                 <div class="col-md-6 feature_content">
                     <div class="subtittle">
                         <h2>WHY CHOOSE US</h2>
-                        <h5>There are many variations of passages of Lorem Ipsum available.</h5>
                     </div>
                     <div class="media">
                         <div class="media-left">
@@ -269,8 +269,8 @@ Grade C1 signifies the financial and technical stability of the company to under
                             </a>
                         </div>
                         <div class="media-body">
-                            <a href="#">30+ YEARS OF EXPERIENCE</a>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting indus-try. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                            <a href="#">20+ YEARS OF EXPERIENCE</a>
+                            <p>Twenty years ago, a company was formed to support the country’s development programmes while providing employment opportunities to many talented youths. It is none other than Samikta Constructions (Pvt) Ltd. Initially the company undertook small-scale contracts, starting at the base. By ICTAD grading the company was at M7 or C8. Today Samikta Constructions Ltd is one of the foremost construction companies in the country holding Grade C1.</p>
                         </div>
                     </div>
                     <div class="media">
@@ -280,8 +280,8 @@ Grade C1 signifies the financial and technical stability of the company to under
                             </a>
                         </div>
                         <div class="media-body">
-                            <a href="#">QUALIFIED EXPERTS</a>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting indus-try. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                            <a href="#">OUR VISION</a>
+                            <p>“Emerge as the Leading Construction Company in Sri Lanka And Gradual Growth into the International Market”</p>
                         </div>
                     </div>
                     <div class="media">
@@ -291,8 +291,8 @@ Grade C1 signifies the financial and technical stability of the company to under
                             </a>
                         </div>
                         <div class="media-body">
-                            <a href="#">Best Customer Services</a>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting indus-try. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                            <a href="#">OUR MISSION</a>
+                            <p>We Samikta are committed to provide quality products and services to our valued customers in reliable, fast, courteous manner to satisfy their needs, legal requirements and to strengthen our financial status. Increase competitiveness through quality to ensure company growth and survival with committed employees. We continually improve our quality management system. We will develop our suppliers and the construction industry in the country.</p>
                         </div>
                     </div>
                 </div>
@@ -302,101 +302,7 @@ Grade C1 signifies the financial and technical stability of the company to under
     <!-- End Our Features Area -->
 
     <!-- Our Services Area -->
-    <section class="our_services_area">
-        <div class="container">
-            <div class="tittle wow fadeInUp">
-                <h2>Our Services</h2>
-                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-            </div>
-            <div class="portfolio_inner_area">
-                <div class="portfolio_filter">
-                    <ul>
-                        <li data-filter="*" class="active"><a href=""> All</a></li>
-                        <li data-filter=".photography"><a href="">ARCHITECTURE</a></li>
-                        <li data-filter=".branding"><a href="">Building</a></li>
-                        <li data-filter=".webdesign"><a href="">CONSTRUCTION</a></li>
-                        <li data-filter=".adversting"><a href="">DESIGN</a></li>
-                        <li data-filter=".painting"><a href="">Painting</a></li>
-                    </ul>
-                </div>
-                <div class="portfolio_item">
-                   <div class="grid-sizer"></div>
-                    <div class="single_facilities col-xs-4 p0 painting photography adversting">
-                       <div class="single_facilities_inner">
-                          	<img src="<?php echo base_url(); ?>assets/images/gallery/sv-1.jpg" alt="">
-                            <div class="gallery_hover">
-                                <h4>Construction</h4>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single_facilities col-xs-4 p0 webdesign">
-                       <div class="single_facilities_inner">
-                          	<img src="<?php echo base_url(); ?>assets/images/gallery/sv-2.jpg" alt="">
-                            <div class="gallery_hover">
-                                <h4>Construction</h4>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single_facilities col-xs-4 painting p0 photography branding">
-                       <div class="single_facilities_inner">
-                          	<img src="<?php echo base_url(); ?>assets/images/gallery/sv-3.jpg" alt="">
-                            <div class="gallery_hover">
-                                <h4>Construction</h4>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single_facilities col-xs-4 p0 adversting webdesign adversting">
-                       <div class="single_facilities_inner">
-                          	<img src="<?php echo base_url(); ?>assets/images/gallery/sv-4.jpg" alt="">
-                            <div class="gallery_hover">
-                                <h4>Construction</h4>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single_facilities col-xs-4 p0 painting adversting branding">
-                       <div class="single_facilities_inner">
-                          	<img src="<?php echo base_url(); ?>assets/images/gallery/sv-5.jpg" alt="">
-                            <div class="gallery_hover">
-                                <h4>Construction</h4>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single_facilities col-xs-4 p0 webdesign photography magazine adversting">
-                       <div class="single_facilities_inner">
-                          	<img src="<?php echo base_url(); ?>assets/images/gallery/sv-6.jpg" alt="">
-                            <div class="gallery_hover">
-                                <h4>Construction</h4>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <!-- End Our Services Area -->
 
     <!-- Our Team Area -->
@@ -404,7 +310,6 @@ Grade C1 signifies the financial and technical stability of the company to under
         <div class="container">
             <div class="tittle wow fadeInUp">
                 <h2>Our Team</h2>
-                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
             </div>
             <div class="row team_row">
                 <div class="col-md-3 col-sm-6 wow fadeInUp">
@@ -416,7 +321,7 @@ Grade C1 signifies the financial and technical stability of the company to under
                                 <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                             </ul>
-                            <a href="#" class="name">Prodip Ghosh</a>
+                            <a href="#" class="name">W.Senanayake</a>
                             <h6>Founder &amp; CEO</h6>
                         </div>
                    </div>
@@ -430,8 +335,8 @@ Grade C1 signifies the financial and technical stability of the company to under
                                 <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                             </ul>
-                            <a href="#" class="name">Emran Khan</a>
-                            <h6>Web-Developer</h6>
+                            <a href="#" class="name">Pasan Senanayake</a>
+                            <h6>Enginear</h6>
                         </div>
                    </div>
                 </div>
@@ -473,7 +378,7 @@ Grade C1 signifies the financial and technical stability of the company to under
         <div class="container">
             <div class="tittle wow fadeInUp">
                 <h2>Our Achievments</h2>
-                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
+                <h4>EMERGE AS THE LEADING CONSTRUCTION COMPANY IN SRI LANKA AND GRADUAL GROWTH INTO THE INTERNATIONAL MARKET</h4>
             </div>
             <div class="achievments_row row">
                 <div class="col-md-3 col-sm-6 p0 completed">
@@ -507,7 +412,7 @@ Grade C1 signifies the financial and technical stability of the company to under
     <section class="featured_works row" data-stellar-background-ratio="0.3">
         <div class="tittle wow fadeInUp">
             <h2>Our Featured Works</h2>
-            <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
+            <h4>EMERGE AS THE LEADING CONSTRUCTION COMPANY IN SRI LANKA AND GRADUAL GROWTH INTO THE INTERNATIONAL MARKET</h4>
         </div>
         <div class="featured_gallery">
           <?php
@@ -538,34 +443,7 @@ Grade C1 signifies the financial and technical stability of the company to under
     <!-- End Our Featured Works Area -->
 
     <!-- Our Latest Blog Area -->
-    <section class="latest_blog_area">
-        <div class="container">
-            <div class="tittle wow fadeInUp">
-                <h2>Our Latest Blog</h2>
-                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-            </div>
-            <div class="row latest_blog">
-                <div class="col-md-4 col-sm-6 blog_content">
-                    <img src="<?php echo base_url(); ?>assets/images/blog/lb-1.jpg" alt="">
-                    <a href="#" class="blog_heading">Our Latest Project</a>
-                    <h4><small>by  </small><a href="#">Emran Khan</a><span>/</span><small>ON </small> October 15, 2016</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis iaculis velit in tristique. Curabitur ac urna urna. Sed sollicitudin at nisi sed accumsan... <a href="#">Read More</a></p>
-                </div>
-                <div class="col-md-4 col-sm-6 blog_content">
-                    <img src="<?php echo base_url(); ?>assets/images/blog/lb-2.jpg" alt="">
-                    <a href="#" class="blog_heading">Our Latest Project</a>
-                    <h4><small>by  </small><a href="#">Prodip Ghosh</a><span>/</span><small>ON </small> October 15, 2016</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis iaculis velit in tristique. Curabitur ac urna urna. Sed sollicitudin at nisi sed accumsan... <a href="#">Read More</a></p>
-                </div>
-                <div class="col-md-4 col-sm-6 blog_content">
-                    <img src="<?php echo base_url(); ?>assets/images/blog/lb-3.jpg" alt="">
-                    <a href="#" class="blog_heading">Our Latest Project</a>
-                    <h4><small>by  </small><a href="#">Prodip Ghosh</a><span>/</span><small>ON </small> October 15, 2016</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis iaculis velit in tristique. Curabitur ac urna urna. Sed sollicitudin at nisi sed accumsan... <a href="#">Read More</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <!-- End Our Latest Blog Area -->
 
     <!-- Our Partners Area -->
@@ -573,7 +451,7 @@ Grade C1 signifies the financial and technical stability of the company to under
         <div class="container">
             <div class="tittle wow fadeInUp">
                 <h2>Our Partners</h2>
-                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
+                <h4>EMERGE AS THE LEADING CONSTRUCTION COMPANY IN SRI LANKA AND GRADUAL GROWTH INTO THE INTERNATIONAL MARKET</h4>
             </div>
             <div class="partners">
                 <div class="item"><img src="<?php echo base_url(); ?>assets/images/client_logo/client_logo-1.png" alt=""></div>
@@ -588,10 +466,10 @@ Grade C1 signifies the financial and technical stability of the company to under
                 <div class="row book_now">
                     <div class="col-md-10 booking_text">
                         <h4>Booking now if you need build your dream home.</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>EMERGE AS THE LEADING CONSTRUCTION COMPANY IN SRI LANKA AND GRADUAL GROWTH INTO THE INTERNATIONAL MARKET</p>
                     </div>
                     <div class="col-md-2 p0 book_bottun">
-                        <a href="#" class="button_all">book now</a>
+                        <a href="<?php echo base_url('index.php/Home/contact'); ?>" class="button_all">book now</a>
                     </div>
                 </div>
             </div>
@@ -605,7 +483,7 @@ Grade C1 signifies the financial and technical stability of the company to under
             <div class="footer_row row">
                 <div class="col-md-3 col-sm-6 footer_about">
                     <h2>ABOUT OUR COMPANY</h2>
-                    <img src="<?php echo base_url(); ?>assets/images/footer-logo.png" alt="">
+                    <img src="<?php echo base_url(); ?>assets/images/footer-logo.png" alt="" >
                     <p>Emerge as the leading construction company in Sri Lanka and gradual growth into the international market!</p>
                     <ul class="socail_icon">
                         <li><a href="https://www.facebook.com/300831170250525"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>

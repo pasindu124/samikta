@@ -64,13 +64,24 @@ class Admin extends CI_controller
                         $this->session->set_userdata($data);
                         $this->load->model('Admin_model');
                         $result= $this->Admin_model->addproject($data);
-                        if ($result) {
-                          $this->session->set_flashdata('projadd','Added!');
+                        if ($result!=false) {
+                          echo $result;
+                          $res = $this->do_upload_all($result);
+                          if($res!=false){
+                            $this->session->set_flashdata('projadd','Added!');
+
+                            $this->load->view('Admin/anproject', $data);
+
+                          }else {
+                            echo "fail";
+                          }
                           //$this->load->view('Admin/upload_success', $data);
-                          $this->load->view('Admin/anproject', $data);
+
 
                         }
                 }
+
+
         }
         public function addingUser(){
 
@@ -137,7 +148,8 @@ class Admin extends CI_controller
                         $data = array('upload_data' => '','projid'=>$projid);
                         $data['upload_data']['file_name']=$image;
                         $result= $this->Admin_model->updateproject($data);
-                        $this->load->view('Admin/projects', $error);
+                        $res = $this->do_upload_all($projid);
+                        $this->load->view('Admin/projects');
                 }
                 else
                 {
@@ -145,6 +157,7 @@ class Admin extends CI_controller
                         $this->session->set_userdata($data);
                         $this->load->model('Admin_model');
                         $result= $this->Admin_model->updateproject($data);
+                        $res = $this->do_upload_all($projid);
                         if ($result) {
                           $this->session->set_flashdata('projup','Added!');
                           //$this->load->view('Admin/upload_success', $data);
@@ -191,6 +204,64 @@ class Admin extends CI_controller
       redirect('Admin/users');
     }
   }
+
+  public function do_upload_all($id)
+{
+    $this->load->library('upload');
+    $dataInfo = array();
+    $files = $_FILES;
+    $cpt = count($_FILES['userfiles']['name']);
+    for($i=0; $i<$cpt; $i++)
+    {
+        $_FILES['userfiles']['name']= $files['userfiles']['name'][$i];
+        $_FILES['userfiles']['type']= $files['userfiles']['type'][$i];
+        $_FILES['userfiles']['tmp_name']= $files['userfiles']['tmp_name'][$i];
+        $_FILES['userfiles']['error']= $files['userfiles']['error'][$i];
+        $_FILES['userfiles']['size']= $files['userfiles']['size'][$i];
+
+        $this->upload->initialize($this->set_upload_options());
+        if($this->upload->do_upload('userfiles')){
+          echo "pass";
+        }else {
+          //echo "fail";
+          $error = array('error' => $this->upload->display_errors());
+          print_r($error);
+        }
+        $dataInfo[] = $this->upload->data();
+    }
+    $proid=$id;
+    $this->load->model('Admin_model');
+    $result= $this->Admin_model->addprojectimages($proid,$dataInfo,$cpt);
+    if($result!=false){
+      return true;
+    }else {
+      return false;
+    }
+     //print_r($data);
+     //$result_set = $this->tbl_products_model->insertUser($data);
+}
+
+private function set_upload_options()
+{
+    //upload an image options
+    $config = array();
+    $config['upload_path'] = './uploads/images/';
+    $config['allowed_types'] = 'gif|jpg|png';
+    $config['max_size']      = '0';
+    $config['overwrite']     = FALSE;
+
+    return $config;
+}
+
+public function proj_img_del($proid,$imgid){
+  $this->load->model('Admin_model');
+  $result= $this->Admin_model->projimgdel($proid,$imgid);
+  if($result!=false){
+    redirect('Admin/project_edit/'.$proid);
+  }else {
+    return false;
+  }
+}
 }
 
 
