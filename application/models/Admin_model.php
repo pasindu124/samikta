@@ -157,10 +157,11 @@ class Admin_model extends CI_model
     return ($this->db->affected_rows() != 1) ? false : true;
   }
 
-  public function projimgdel($proid,$imgid){
+  public function projimgdel($proid,$imgid,$imgname){
     $this->db->where('projid', $proid);
     $this->db->where('id', $imgid);
     $this->db->delete('image');
+    unlink("uploads/images/".$imgname);
     return ($this->db->affected_rows() != 1) ? false : true;
 
   }

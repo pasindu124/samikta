@@ -220,7 +220,7 @@ if (!($log)) {
                                          <?php $num=1;foreach ($qua->result() as $row) { ?>
                                            <div class="col-md-2">
                                              <img src="<?php echo base_url(); ?>uploads/images/<?php echo $row->imgname ?>" alt="" style="width:70px;height:70px;">
-                                             <a href="<?php echo base_url('index.php/Admin/proj_img_del/'.$projid.'/'.$row->id) ?>" class="btn btn-primary btn-xs" style="background-color:orange;" role="button">Remove</a>
+                                             <a href="<?php echo base_url('index.php/Admin/proj_img_del/'.$projid.'/'.$row->id.'/'.$row->imgname) ?>" class="btn btn-primary btn-xs" style="background-color:orange;" role="button">Remove</a>
                                            </div>
 
                                          <?php }?>

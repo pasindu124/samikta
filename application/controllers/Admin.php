@@ -157,6 +157,7 @@ class Admin extends CI_controller
                         $this->session->set_userdata($data);
                         $this->load->model('Admin_model');
                         $result= $this->Admin_model->updateproject($data);
+                        unlink("uploads/".$image);
                         $res = $this->do_upload_all($projid);
                         if ($result) {
                           $this->session->set_flashdata('projup','Added!');
@@ -253,9 +254,9 @@ private function set_upload_options()
     return $config;
 }
 
-public function proj_img_del($proid,$imgid){
+public function proj_img_del($proid,$imgid,$imgname){
   $this->load->model('Admin_model');
-  $result= $this->Admin_model->projimgdel($proid,$imgid);
+  $result= $this->Admin_model->projimgdel($proid,$imgid,$imgname);
   if($result!=false){
     redirect('Admin/project_edit/'.$proid);
   }else {
