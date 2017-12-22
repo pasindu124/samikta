@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php $uid="" ?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -48,10 +49,13 @@
                       <li><a href="#"><i class="fa fa-user-o"></i><?php echo $this->session->userdata('userName'); ?></a></li>
                       <a style="background-color:green;margin:10px; "href="<?php echo base_url('index.php/Admin') ?>" target="_blank" class="btn btn-info" role="button"><b>Admin Panel</b></a>
 
-               <?php   }elseif($this->session->userdata('userType') == 'customer'){ ?>
+               <?php   $uid = $this->session->userdata('userID');
+                      }elseif($this->session->userdata('userType') == 'customer'){ ?>
                       <li> <a href="<?php echo base_url('index.php/Login/logout') ?>"><i class="fa fa-sign-out"></i>Log Out</a></li>
                       <li><a href="#"><i class="fa fa-user-o"></i><?php echo $this->session->userdata('userName'); ?></a></li>
-               <?php  }else{  ?>
+               <?php
+                      $uid = $this->session->userdata('userID');
+                      }else{  ?>
                       <li><a href="<?php echo base_url('index.php/Home/login') ?>"><i class="fa fa-sign-in"></i>Login</a></li>
                        <li><a href="<?php echo base_url('index.php/Home/register') ?>"><i class="fa fa-user-o"></i>Register</a></li>
                 <?php }  ?>
@@ -195,7 +199,7 @@
         </div>
 
     </section>
-    <?php $query = $this->db->query("SELECT * FROM `feedback` WHERE `uid`=1 AND`pid`='$projid'"); //userid
+    <?php $query = $this->db->query("SELECT * FROM `feedback` WHERE `uid`='$uid' AND`pid`='$projid'"); //userid
           $feedback=0;
           $flag=0;
           if ($query->num_rows()==1) {
@@ -214,10 +218,14 @@
         <div class="container">
               <div class="row">
                 <div class="col-md-12">
+
+                  <?php if ($this->session->userdata('loggedIn')) {
+
+                  ?>
                   <div class="">
                     <h4>Give a feedback to this project...</h4>
                     <div class="stars">
-                      <?php echo form_open('Comment/givefeedback/'.$projid); ?>
+                      <?php echo form_open('Comment/givefeedback/'.$projid.'/'.$uid); ?>
 
                         <input class="star star-5" id="star-5" type="radio" name="star" value="5" <?php if($feedback==5){?>checked<?php } ?>  <?php if($flag==1){?>disabled<?php } ?>/>
                         <label class="star star-5" for="star-5"></label>
@@ -235,6 +243,21 @@
                     <p>Average feedback score: <?php echo $row1->feedback ?></p>
                   </div>
 
+                <?php }else{ ?>
+                  <h4>To give comments and feedbacks...</h4>
+                  <div class="col-md-2">
+                    <a href="<?php echo base_url('index.php/Home/login') ?>" class="btn btn-info" role="button">Log In</a>
+
+                  </div>
+                  <div class="col-md-1">
+                    <h3 style="margin-top:15px;margin-left:-60px;">or</h3>
+                  </div>
+                  <div class="col-md-2">
+                    <a style="margin-left:-90px;"href="<?php echo base_url('index.php/Home/register') ?>" class="btn btn-info" role="button">Register</a>
+                  </div>
+
+
+                <?php }?>
                 </div>
 
               </div>
@@ -248,7 +271,23 @@
 
               <div class="row">
                 <div class="container">
-                        <?php $query = $this->db->query("SELECT * FROM `comment` WHERE `pid`='$projid'"); ?>
+                  <?php if ($this->session->userdata('loggedIn')) { ?>
+
+
+                          <div class="row">
+                            <div class="col-md-8">
+                              <?php echo form_open('Comment/insertcomment/'.$projid.'/'.$uid); ?>
+                                <div class="form-group">
+                                  <label for="comment">Comment:</label>
+                                  <textarea class="form-control" rows="5" cols="4" name="comment"></textarea>
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                              </form>
+                            </div>
+
+                          </div>
+                        <?php } ?>
+                        <?php $query = $this->db->query("SELECT * FROM `comment` WHERE `pid`='$projid' ORDER BY `comment`.`id` DESC"); ?>
                         <div class="row" style="margin-top:20px;">
                           <?php
                             $num=0;
@@ -265,18 +304,7 @@
 
 
                         </div>
-                        <div class="row">
-                          <div class="col-md-8">
-                            <?php echo form_open('Comment/insertcomment/'.$projid); ?>
-                              <div class="form-group">
-                                <label for="comment">Comment:</label>
-                                <textarea class="form-control" rows="5" cols="4" name="comment"></textarea>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                              </div>
-                            </form>
-                          </div>
 
-                        </div>
                 </div>
               </div>
 

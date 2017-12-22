@@ -5,14 +5,14 @@
 class Comment_model extends CI_model
 {
 
-  public function insertcom($id){
+  public function insertcom($id,$uid){
     $projectid=$id;
     $today = date("Y-m-d H:i:s");
     $com = $this->input->post('comment',TRUE);
     echo $com." ".$projectid;
 
     $data = array('pid' =>$projectid ,
-            'uid' =>1 ,
+            'uid' =>$uid ,
             'text' =>$com ,
             'timedate'=>$today
     );
@@ -20,12 +20,12 @@ class Comment_model extends CI_model
     return ($this->db->affected_rows() != 1) ? false : true;
   }
 
-  public function givefeed($id){
+  public function givefeed($id,$uid){
     $feedback=$this->input->post('star',TRUE);
     echo $feedback;
     $projectid= $id;
     $data = array('pid' =>$projectid ,
-                'uid'=> 1,
+                'uid'=> $uid,
                 'feedback' => $feedback
             );
     $this->db->insert('feedback', $data);

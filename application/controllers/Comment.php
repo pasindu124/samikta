@@ -4,11 +4,11 @@
  */
 class Comment extends CI_controller
 {
-  
-  public function insertcomment($id){
+
+  public function insertcomment($id,$uid){
 
     $this->load->model('Comment_model');
-    $row = $this->Comment_model->insertcom($id);
+    $row = $this->Comment_model->insertcom($id,$uid);
     if($row!=false){
       echo "pass";
       redirect('Home/proj_view/'.$id);
@@ -17,9 +17,9 @@ class Comment extends CI_controller
     }
   }
 
-  public function givefeedback($id){
+  public function givefeedback($id,$uid){
     $this->load->model('Comment_model');
-    $row = $this->Comment_model->givefeed($id);
+    $row = $this->Comment_model->givefeed($id,$uid);
     if($row!=false){
       echo "pass";
       redirect('Home/proj_view/'.$id);
