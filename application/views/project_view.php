@@ -292,9 +292,12 @@
                           <?php
                             $num=0;
                             foreach ($query->result() as $row) { ?>
+                              <?php $quer2=$this->db->query("SELECT * FROM `user` WHERE `userID`='$row->uid'");
+                              $row1 = $quer2->row();
+                              ?>
                           <div class="col-md-10">
                             <div class="panel panel-default">
-                              <div class="panel-heading">User id:<?php echo $row->uid ?></div>
+                              <div class="panel-heading">User Name:<?php echo $row1->userName ?> User</div>
                               <div class="panel-body"><?php echo $row->text ?></div>
                             </div>
                           </div>
