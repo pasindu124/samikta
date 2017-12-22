@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '34.227.47.37',
 	'username' => 'root',
 	'password' => '',
 	'database' => 'samikta',
