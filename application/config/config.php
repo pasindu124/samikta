@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |as
 */
-$config['base_url'] = 'http://54.147.249.33/samikta/';
+$config['base_url'] = 'http://35.196.115.129/samikta/';
 //$config['base_url'] = 'http://localhost/samikta/';
 
 /*
