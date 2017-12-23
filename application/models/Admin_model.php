@@ -145,8 +145,22 @@ class Admin_model extends CI_model
  }
 
   public function proj_delete($id){
+    //unlink all images to the project
+    $query= $this->db->query("SELECT * FROM `image` WHERE `projid`='$id'");
+    foreach ($query->result() as $row) {
+      unlink("uploads/images/".$row->imgname);
+    }
+    $query1 = $this->db->query("SELECT * FROM `project` WHERE `projid`='$id'");
+    $row1 = $query1->row();
+    unlink("uploads/".$row1->image);
+
+    //delete other data
     $this->db->where('projid', $id);
     $this->db->delete('image');
+    $this->db->where('pid', $id);
+    $this->db->delete('feedback');
+    $this->db->where('pid', $id);
+    $this->db->delete('comment');
     $this->db->where('projid', $id);
     $this->db->delete('project');
     return ($this->db->affected_rows() != 1) ? false : true;
