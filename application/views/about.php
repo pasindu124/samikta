@@ -147,7 +147,7 @@
                     <div class="subtittle">
                         <h2>WHO WE ARE</h2>
                     </div>
-                    <p>Twenty years ago, a company was formed to support the country’s development programmes while providing employment opportunities to many talented youths. It is none other than Samikta Constructions (Pvt) Ltd. Initially the company undertook small-scale contracts, starting at the base. By ICTAD grading the company was at M7 or C8. Today Samikta Constructions Ltd is one of the foremost construction companies in the country holding Grade C1.</p>
+                    <p>One day, a company was formed to support the country’s development programmes while providing employment opportunities to many talented youths. It is none other than Samikta Constructions (Pvt) Ltd. Initially the company undertook small-scale contracts, starting at the base. By ICTAD grading the company was at M7 or C8. Today Samikta Constructions Ltd is one of the foremost construction companies in the country holding Grade C1.</p>
                     <p>Grade C1 signifies the financial and technical stability of the company to undertake large-scale contracts of huge value and complexity. Subsequently, obtaining ISO certification from 2008 has brought Samikta Constructions (Pvt) Ltd to international standards. This required the company to enhance its staff as well as supportive services. The company also encompasses modern technologies and techniques to provide total customer satisfaction and on time delivery of Projects.  With this as the motto, the company exerted much to win many awards from prestigious institutions for outstanding performances and quality construction.</p>
                     <a href="<?php echo base_url('index.php/Home/contact'); ?>" class="button_all">Contact Now</a>
                 </div>
@@ -189,7 +189,7 @@
                         </div>
                         <div class="media-body">
                             <a href="#">20+ YEARS OF EXPERIENCE</a>
-                            <p>Twenty years ago, a company was formed to support the country’s development programmes while providing employment opportunities to many talented youths. It is none other than Samikta Constructions (Pvt) Ltd. Initially the company undertook small-scale contracts, starting at the base. By ICTAD grading the company was at M7 or C8. Today Samikta Constructions Ltd is one of the foremost construction companies in the country holding Grade C1.</p>
+                            <p>One day, a company was formed to support the country’s development programmes while providing employment opportunities to many talented youths. It is none other than Samikta Constructions (Pvt) Ltd. Initially the company undertook small-scale contracts, starting at the base. By ICTAD grading the company was at M7 or C8. Today Samikta Constructions Ltd is one of the foremost construction companies in the country holding Grade C1.</p>
                         </div>
                     </div>
                     <div class="media">

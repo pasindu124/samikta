@@ -190,7 +190,7 @@
                     <div class="subtittle">
                         <h2>WHO WE ARE</h2>
                     </div>
-                    <p>Twenty years ago, a company was formed to support the country’s development programmes while providing employment opportunities to many talented youths. It is none other than Samikta Construction (Pvt) Ltd. Initially the company undertook small-scale contracts, starting at the base. By ICTAD grading the company was at M7 or C8. Today Samikta Construction (Pvt) Ltd is one of the foremost construction companies in the country holding Grade C1.
+                    <p>One day, a company was formed to support the country’s development programmes while providing employment opportunities to many talented youths. It is none other than Samikta Construction (Pvt) Ltd. Initially the company undertook small-scale contracts, starting at the base. By ICTAD grading the company was at M7 or C8. Today Samikta Construction (Pvt) Ltd is one of the foremost construction companies in the country holding Grade C1.
 Grade C1 signifies the financial and technical stability of the company to undertake large-scale contracts of huge value and complexity. </p>
 <p>Subsequently, obtaining ISO certification from 2008 has brought Samikta Construction (Pvt) Ltd to international standards. This required the company to enhance its staff as well as supportive services. The company also encompasses modern technologies and techniques to provide total customer satisfaction and on time delivery of Projects.  With this as the motto, the company exerted much to win many awards from prestigious institutions for outstanding performances and quality construction.</p>
                     <a href="<?php echo base_url();?>index.php/Home/contact" class="button_all">Contact Now</a>
@@ -270,7 +270,7 @@ Grade C1 signifies the financial and technical stability of the company to under
                         </div>
                         <div class="media-body">
                             <a href="#">20+ YEARS OF EXPERIENCE</a>
-                            <p>Twenty years ago, a company was formed to support the country’s development programmes while providing employment opportunities to many talented youths. It is none other than Samikta Constructions (Pvt) Ltd. Initially the company undertook small-scale contracts, starting at the base. By ICTAD grading the company was at M7 or C8. Today Samikta Constructions Ltd is one of the foremost construction companies in the country holding Grade C1.</p>
+                            <p>One day, a company was formed to support the country’s development programmes while providing employment opportunities to many talented youths. It is none other than Samikta Constructions (Pvt) Ltd. Initially the company undertook small-scale contracts, starting at the base. By ICTAD grading the company was at M7 or C8. Today Samikta Constructions Ltd is one of the foremost construction companies in the country holding Grade C1.</p>
                         </div>
                     </div>
                     <div class="media">
@@ -349,8 +349,8 @@ Grade C1 signifies the financial and technical stability of the company to under
                                 <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                             </ul>
-                            <a href="#" class="name">Prodip Ghosh</a>
-                            <h6>Founder &amp; CEO</h6>
+                            <a href="#" class="name">Deshan Tharuka Hettiarachchi</a>
+                            <h6>Enginear &amp; QS</h6>
                         </div>
                    </div>
                 </div>
@@ -363,11 +363,12 @@ Grade C1 signifies the financial and technical stability of the company to under
                                 <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                             </ul>
-                            <a href="#" class="name">Jakaria Khan</a>
-                            <h6>Founder &amp; CEO</h6>
+                            <a href="#" class="name">Chathuri Sithuruwan</a>
+                            <h6>Enginear &amp; QS</h6>
                         </div>
                    </div>
                 </div>
+                
             </div>
         </div>
     </section>
