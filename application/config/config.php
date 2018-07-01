@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 //$config['base_url'] = 'http://samiktaconstructions.com/';
 //$config['base_url'] = 'http://localhost/samikta/';
-$config['base_url'] = 'http://localhost/';
+$config['base_url'] = 'http://35.229.91.239 /';
 
 /*
 |--------------------------------------------------------------------------
